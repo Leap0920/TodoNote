@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container home-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 text-center">
+            <!-- Hero Section -->
+            <div class="hero-section mb-5">
+                <h1 class="display-4 text-gradient fw-bold mb-4">Welcome to TodoNote!</h1>
+                <p class="lead text-muted mb-5">Organize Your Life, One Task at a Time</p>
+
+                <!-- Animated Separator -->
+                <div class="separator-line animated-separator mb-5 mx-auto"></div>
+
+                <!-- Feature Cards -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6 feature-card">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <div class="card-body p-4">
+                                <i class="fas fa-tasks fa-3x text-primary mb-3"></i>
+                                <h3 class="h4">Todo List</h3>
+                                <p class="text-muted">Manage tasks efficiently with priority levels and due dates</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 feature-card">
+                        <div class="card h-100 shadow-sm hover-effect">
+                            <div class="card-body p-4">
+                                <i class="fas fa-edit fa-3x text-success mb-3"></i>
+                                <h3 class="h4">Notepad</h3>
+                                <p class="text-muted">Capture ideas instantly with rich text formatting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                    <a href="@Url.Action("Index", "Todo")" class="btn btn-primary btn-lg px-4 gap-3">
+                        <i class="fas fa-tasks me-2"></i> Todo List
+                    </a>
+                    <a href="@Url.Action("Index", "Note")" class="btn btn-success btn-lg px-4">
+                        <i class="fas fa-edit me-2"></i> Notepad
+                    </a>
+                </div>
+            </div>
+
+            <!-- App Stats -->
+            <div class="app-stats mt-5 pt-5 border-top">
+                <div class="row g-4">
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <div class="stat-number text-primary">∞</div>
+                            <div class="stat-label">Tasks</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <div class="stat-number text-success">∞</div>
+                            <div class="stat-label">Notes</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="stat-item">
+                            <div class="stat-number text-info">24/7</div>
+                            <div class="stat-label">Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .home-container {
+            padding: 5rem 0;
+            min-height: 80vh;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .animated-separator {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+            animation: separatorAnimation 2s infinite alternate;
+        }
+
+        .feature-card .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            border: none;
+        }
+
+            .feature-card .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            }
+
+        .hover-effect {
+            transition: all 0.3s ease;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @@keyframes separatorAnimation {
+            0% {
+                transform: scaleX(1);
+                background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+            }
+
+            100% {
+                transform: scaleX(1.5);
+                background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Add any interactive JavaScript here
+        document.querySelectorAll('.hover-effect').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.cursor = 'pointer';
+            });
+        });
+    </script>
+}
