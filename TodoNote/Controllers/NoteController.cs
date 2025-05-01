@@ -44,7 +44,7 @@ namespace TodoNote.Controllers
             return View(note);
         }
 
-        // GET: Note/Edit/5
+        // GET: Note/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -60,7 +60,7 @@ namespace TodoNote.Controllers
             return View(note);
         }
 
-        // POST: Note/Edit/5
+        // POST: Note/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,CreatedDate")] Note note)
@@ -93,7 +93,7 @@ namespace TodoNote.Controllers
             return View(note);
         }
 
-        // GET: Note/Delete/5
+        // GET: Note/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -110,8 +110,6 @@ namespace TodoNote.Controllers
 
             return View(note);
         }
-
-        // POST: Note/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

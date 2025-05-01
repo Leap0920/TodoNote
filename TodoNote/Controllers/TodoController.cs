@@ -21,7 +21,7 @@ namespace TodoNote.Controllers
         {
             var todos = await _context.Todos
                 .OrderBy(t => t.IsCompleted) // Pending first, Done last
-                .ThenBy(t => t.CreatedDate)  // Optional: sort by creation date
+                .ThenBy(t => t.CreatedDate)  // sort by creation date
                 .ToListAsync();
             return View(todos);
         }
@@ -47,7 +47,7 @@ namespace TodoNote.Controllers
             return View(todo);
         }
 
-        // GET: Todo/Edit/5
+        // GET: Todo/Edit
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -63,7 +63,7 @@ namespace TodoNote.Controllers
             return View(todo);
         }
 
-        // POST: Todo/Edit/5
+        // POST: Todo/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,IsCompleted,CreatedDate")] Todo todo)
@@ -96,7 +96,7 @@ namespace TodoNote.Controllers
             return View(todo);
         }
 
-        // GET: Todo/Delete/5
+        // GET: Todo/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -114,7 +114,7 @@ namespace TodoNote.Controllers
             return View(todo);
         }
 
-        // POST: Todo/Delete/5
+        // POST: Todo/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -125,7 +125,7 @@ namespace TodoNote.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST: Todo/ToggleComplete/5
+        // POST: Todo/ToggleComplete/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ToggleComplete(int id)

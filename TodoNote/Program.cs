@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoNote.Models; // Make sure this namespace matches your project
+using TodoNote.Models; 
 
 var builder = WebApplication.CreateBuilder(args);
 
