@@ -14,7 +14,7 @@ Easily manage your tasks and notes with a clean interface, dark/light mode toggl
   Capture, edit, and delete notes with rich formatting.
 
 - **Responsive Design:**  
-  Works beautifully on desktop, tablet, and mobile.
+  Works beautifully on desktop.
 
 - **Modern UI:**  
   Built with Bootstrap 5, custom CSS, and interactive JavaScript.
