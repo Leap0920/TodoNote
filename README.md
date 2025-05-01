@@ -1,7 +1,7 @@
 # TodoNote: Todo List & Notepad
 
 A modern, responsive **Todo List and Notepad web application** built with **ASP.NET MVC**.  
-Easily manage your tasks and notes with a clean interface, dark/light mode toggle, and persistent data storage.
+Easily manage your tasks and notes with a clean interface and persistent data storage.
 
 ---
 
