@@ -54,25 +54,36 @@ CREATE TABLE Notes (
 );
 ```
 
----
-
 ## ⚡ Getting Started
 
-1. **Clone this repository**
+### Prerequisites
+- Visual Studio 2019 or later
+- SQL Server Express 2019 LocalDB
+
+### Installation
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/Leap0920/TodoNote.git
    ```
 
 2. **Set up the Database**
-   - Start XAMPP and MySQL.
-   - Create the database and tables using the schema above.
+   - Ensure SQL Server Express 2019 LocalDB is installed
 
 3. **Configure Connection String**
-   - Update your `appsettings.json` or `Web.config` with your MySQL connection details.
+   - Update `appsettings.json` with your LocalDB connection:
+   ```json
+   "ConnectionStrings": {
+     "DefaultConnection": ""Server=(localdb)\\mssqllocaldb;Database=TodoNoteDb;Trusted_Connection=True;MultipleActiveResultSets=true""
+   }
+   ```
 
-4. **Run the Application**
-   - Open in Visual Studio.
-   - Press `F5` or click **Run**.
+4. **Update the Database**
+   - Open the Package Manager Console in Visual Studio
+   - Run: `Update-Database`
+
+5. **Run the Application**
+   - Press F5 or click Run in Visual Studio
 
 ---
 
